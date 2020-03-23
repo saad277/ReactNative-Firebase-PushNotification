@@ -79,7 +79,10 @@ class App extends Component {
 
   componentDidMount() {
 
-    const channel = new firebase.notifications.Android.Channel("insider", "insider channel", firebase.notifications.Android.Importance.Max);
+    const channel = new firebase.notifications.Android.Channel("insider", "insider channel", 
+    firebase.notifications.Android.Importance.Max);
+
+    
     firebase.notifications().android.createChannel(channel);
     this.checkPermission();
     this.createNotificationListener();
